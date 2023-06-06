@@ -1,8 +1,5 @@
 import React, { useContext, createContext, useReducer } from "react";
-import { useData } from "../data/dataContext";
-
 const cartContext = createContext();
-
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "updateCart":
@@ -19,10 +16,8 @@ export const CartProvider = ({ children }) => {
     cart: [],
     deliveryCharges: 1000,
   });
-  const { dispatch } = useData();
   const addToCart = async (product) => {
     try {
-      dispatch({ type: "toggleLoading" });
       const result = await fetch("/api/user/cart", {
         method: "POST",
         headers: {
@@ -36,14 +31,11 @@ export const CartProvider = ({ children }) => {
       }
     } catch (e) {
       console.error(e);
-    } finally {
-      dispatch({ type: "toggleLoading" });
     }
   };
 
   const increaseQuantity = async (id) => {
     try {
-      dispatch({ type: "toggleLoading" });
       const result = await fetch(`/api/user/cart/${id}`, {
         method: "POST",
         body: JSON.stringify({
@@ -61,14 +53,11 @@ export const CartProvider = ({ children }) => {
       }
     } catch (e) {
       console.error(e);
-    } finally {
-      dispatch({ type: "toggleLoading" });
     }
   };
 
   const decreaseQuantity = async (id) => {
     try {
-      dispatch({ type: "toggleLoading" });
       const result = await fetch(`/api/user/cart/${id}`, {
         method: "POST",
         body: JSON.stringify({
@@ -86,14 +75,11 @@ export const CartProvider = ({ children }) => {
       }
     } catch (e) {
       console.error(e);
-    } finally {
-      dispatch({ type: "toggleLoading" });
     }
   };
 
   const deleteItem = async (id) => {
     try {
-      dispatch({ type: "toggleLoading" });
       const result = await fetch(`/api/user/cart/${id}`, {
         method: "DELETE",
         headers: {
@@ -106,8 +92,6 @@ export const CartProvider = ({ children }) => {
       }
     } catch (e) {
       console.error(e);
-    } finally {
-      dispatch({ type: "toggleLoading" });
     }
   };
   const itemAlreadyInCart = (item_id) =>

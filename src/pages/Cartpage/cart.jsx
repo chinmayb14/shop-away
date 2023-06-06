@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./cart.css";
 import { useCart } from "../../context/cart/cartContext";
 import { useWish } from "../../context/wishlist/wishListContext";
 import { useNavigate } from "react-router-dom";
-import { Loader } from "../../components/loader/loader";
+import { toast } from "react-toastify";
 export const Cart = () => {
   const navigate = useNavigate();
   const {
@@ -16,7 +16,7 @@ export const Cart = () => {
     onlyPrice,
   } = useCart();
 
-  const { addToWishList, itemInWishList } = useWish();
+  const { addToWishList } = useWish();
 
   return (
     <div className="cartpage">
@@ -36,11 +36,14 @@ export const Cart = () => {
                     <p className="quantity-span">
                       Quantity :{" "}
                       <button
-                        onClick={() =>
-                          element.qty === 1
-                            ? deleteItem(element._id)
-                            : decreaseQuantity(element._id)
-                        }
+                        onClick={() => {
+                          if (element.qty === 1) {
+                            deleteItem(element._id);
+                            toast.warn(`${element.name} removed from cart!`);
+                          } else {
+                            decreaseQuantity(element._id);
+                          }
+                        }}
                       >
                         -
                       </button>
@@ -49,18 +52,24 @@ export const Cart = () => {
                         +
                       </button>
                     </p>
-                    <button onClick={() => deleteItem(element._id)}>
+                    <button
+                      onClick={() => {
+                        deleteItem(element._id);
+                        toast.warn(`${element.name} removed from cart!`);
+                      }}
+                    >
                       Remove From Cart
                     </button>
-                    {itemInWishList(element._id) ? (
-                      <button onClick={() => navigate("/wishlist")}>
-                        Go to wishList
-                      </button>
-                    ) : (
-                      <button onClick={() => addToWishList(element)}>
-                        Move To Wishlist
-                      </button>
-                    )}
+                    <button
+                      onClick={() => {
+                        addToWishList(element);
+                        toast.success(`${element.name} added to wishlist!`);
+                        deleteItem(element._id);
+                        toast.warn(`${element.name} removed from cart!`);
+                      }}
+                    >
+                      Move To Wishlist
+                    </button>
                   </div>
                 </div>
               );

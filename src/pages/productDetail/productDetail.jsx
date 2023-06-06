@@ -4,7 +4,6 @@ import "./productDetail.css";
 import { useCart } from "../../context/cart/cartContext";
 import { useWish } from "../../context/wishlist/wishListContext";
 import { useNavigate } from "react-router-dom";
-import { Loader } from "../../components/loader/loader";
 export const ProductDetail = () => {
   const navigate = useNavigate();
   const {

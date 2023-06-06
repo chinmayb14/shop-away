@@ -1,6 +1,7 @@
 import React from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+
 import { Home } from "./pages/Homepage/home";
 import { Cart } from "./pages/Cartpage/cart";
 import { WishList } from "./pages/Wishlist/wishList";
@@ -12,7 +13,8 @@ import { Signup } from "./pages/Signup/signup";
 import { RequiresAuth } from "./components/RequiresAuth/RequiresAuth";
 import { UserProfile } from "./pages/userProfilePage/userProfilePage.jsx/userProfile";
 import { ProductDetail } from "./pages/productDetail/productDetail";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="App">
@@ -56,7 +58,19 @@ function App() {
           }
         />
       </Routes>
-      <NavLink to="/mock-api">mockman</NavLink>
+      {/* <NavLink to="/mock-api">mockman</NavLink> */}
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 }
