@@ -60,9 +60,9 @@ function App() {
       </Routes>
       {/* <NavLink to="/mock-api">mockman</NavLink> */}
       <ToastContainer
-        position="top-center"
-        autoClose={2000}
-        hideProgressBar={false}
+        position="bottom-right"
+        autoClose={1000}
+        hideProgressBar={true}
         newestOnTop={false}
         closeOnClick
         rtl={false}
