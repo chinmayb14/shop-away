@@ -11,7 +11,7 @@ import { formatDate, requiresAuth } from "../utils/authUtils";
  * This handler handles getting items to user's cart.
  * send GET Request at /api/user/cart
  * */
-export const getCartItemsHandler = function (schema, request) {
+export const getCartItemsHandler = function(schema, request) {
   const userId = requiresAuth.call(this, request);
   if (!userId) {
     return new Response(
@@ -32,7 +32,7 @@ export const getCartItemsHandler = function (schema, request) {
  * body contains {product}
  * */
 
-export const addItemToCartHandler = function (schema, request) {
+export const addItemToCartHandler = function(schema, request) {
   const userId = requiresAuth.call(this, request);
   try {
     if (!userId) {
@@ -66,11 +66,12 @@ export const addItemToCartHandler = function (schema, request) {
 };
 
 /**
+ *
  * This handler handles removing items to user's cart.
  * send DELETE Request at /api/user/cart/:productId
- * */
+ **/
 
-export const removeItemFromCartHandler = function (schema, request) {
+export const removeItemFromCartHandler = function(schema, request) {
   const userId = requiresAuth.call(this, request);
   try {
     if (!userId) {
@@ -104,7 +105,7 @@ export const removeItemFromCartHandler = function (schema, request) {
  * body contains {action} (whose 'type' can be increment or decrement)
  * */
 
-export const updateCartItemHandler = function (schema, request) {
+export const updateCartItemHandler = function(schema, request) {
   const productId = request.params.productId;
   const userId = requiresAuth.call(this, request);
   try {

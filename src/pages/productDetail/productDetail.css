@@ -1,0 +1,32 @@
+.product-detail-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-detail-card {
+  background-color: white;
+  margin-top: 10%;
+  width: 70%;
+  height: 40%;
+  display: flex;
+  border-radius: 0.5rem;
+}
+
+.product-detail-card img {
+  width: 25%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.product-detail-card-info button {
+  width: 15%;
+}
+
+.product-detail-card-info {
+  box-sizing: border-box;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

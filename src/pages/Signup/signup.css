@@ -1,0 +1,67 @@
+.signup-page {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.signup-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 50vh;
+  border: 1px solid black;
+  padding: 4rem;
+  background-color: white;
+}
+
+.signup-page .signup-div h3 {
+  text-align: center;
+}
+
+.signup-page .signup-div .signup-createAccount svg {
+  font-size: 25px;
+}
+.signup-createAccount a {
+  text-decoration: none;
+  color: #2d3142;
+}
+.signup-page .signup-div input {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.signup-page .signup-div #account {
+  padding: 0.25rem 0.5rem;
+}
+
+.signup-createAccount {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.password-field {
+  display: flex;
+}
+.signup-page .signup-div .password-field input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.signup-page .signup-div .password-field {
+  border-width: 2px;
+  border-style: inset;
+  border-radius: 0.5rem;
+}
+.signup-page .signup-div .password-field button {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border: none;
+  outline: none;
+  padding: 1px;
+  font-size: 1rem;
+  background-color: white;
+}

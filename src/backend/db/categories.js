@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 /**
  * Category Database can be added here.
@@ -7,21 +7,33 @@ import { v4 as uuid } from "uuid";
 
 export const categories = [
   {
-    _id: uuid(),
-    categoryName: "fiction",
+    _id: "7b11eb1d-ec22-44a0-aeea-48749fd9ea1b",
+    categoryName: "Smartphones",
     description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+      "Unleash the Power of Innovation with Cutting-Edge Smartphones!",
   },
   {
-    _id: uuid(),
-    categoryName: "non-fiction",
+    _id: "e847b12c-6233-497e-b604-6042955e8aa5",
+    categoryName: "Laptops",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "Empower Your Productivity with Exceptional Laptops of Unmatched Performance!",
   },
   {
-    _id: uuid(),
-    categoryName: "horror",
+    _id: "69e9223e-2cce-473d-944e-b9ae76cc0f67",
+    categoryName: "Headphones",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "Experience Sound Like Never Before: Your Ultimate Headphone Destination",
+  },
+  {
+    _id: "fa16aca0-7cd0-4565-bf42-03cb4455f057",
+    categoryName: "Smarttvs",
+    description:
+      "Immerse Yourself in the Future of Entertainment: Explore Cutting-Edge Smart TVs for an Unforgettable Viewing Experience!",
+  },
+  {
+    _id: "5ff0bdae-be2b-4314-a0d2-762215042591",
+    categoryName: "Smartwatches",
+    description:
+      "Elevate Your Everyday: Discover the Perfect Smartwatch Companion for a Connected Lifestyle!",
   },
 ];

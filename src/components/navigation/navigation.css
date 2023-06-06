@@ -1,0 +1,140 @@
+.navigation {
+  background-color: #ece5f0;
+  color: #2d3142;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+.navigation p {
+  align-self: center;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+.navigation button {
+  width: fit-content;
+  padding: 3px 5px;
+  height: 30px;
+}
+.navigation .search button {
+  border: none;
+  outline: none;
+  height: 20px;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.navigation .search svg {
+  width: 20px;
+  height: 14px;
+  align-self: center;
+}
+.navigation .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: white;
+  width: 300px;
+  height: 20px;
+}
+.navigation input {
+  font-size: 14px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 3px 5px;
+  width: 250px;
+  height: 20px;
+}
+.badge-position {
+  position: relative;
+  display: flex;
+}
+.badge-position svg {
+  align-self: center;
+}
+.badge-position span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  padding: 1px;
+  font-size: 10px;
+  color: white;
+  width: 10px;
+  height: 15px;
+  right: 0px;
+  border-radius: 100%;
+  position: absolute;
+}
+.buttonShow {
+  display: inline-block;
+}
+
+.buttonNoShow {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .navigation {
+    background-color: #ece5f0;
+    color: #2d3142;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  .navigation p {
+    align-self: center;
+    padding: 0.5rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+  }
+  .navigation button {
+    width: fit-content;
+    padding: 5px 10px;
+    height: 30px;
+  }
+  .navigation input {
+    font-size: 18px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 450px;
+    height: 50px;
+  }
+  .navigation .navigation-section {
+    display: flex;
+    flex-grow: 0.1;
+    align-self: center;
+    justify-content: space-between;
+  }
+  .navigation-section svg {
+    width: 30px;
+    height: 25px;
+  }
+  .navigation .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+    width: 500px;
+    height: 50px;
+  }
+  .navigation .search button {
+    border: none;
+    outline: none;
+    height: 50px;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .navigation .search svg {
+    width: 30px;
+    height: 30px;
+    align-self: center;
+  }
+}

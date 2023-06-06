@@ -1,0 +1,43 @@
+.filters {
+  padding: 10px;
+  position: relative;
+  min-width: 150px;
+  bottom: 0;
+  line-height: 2;
+  background-color: white;
+}
+.filter-rating {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.filter-header button {
+  padding: 5px;
+  background-color: white;
+  font-size: 15px;
+  text-decoration: underline;
+  border: none;
+  outline: none;
+}
+
+.filter-category {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.filter-category-row {
+  display: flex;
+  gap: 0.5rem;
+}
+.filter-radio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

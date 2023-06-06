@@ -1,41 +1,62 @@
+import React from "react";
+import { NavLink, Route, Routes } from "react-router-dom";
 import "./App.css";
-import logo from "./logo.png";
+import { Home } from "./pages/Homepage/home";
+import { Cart } from "./pages/Cartpage/cart";
+import { WishList } from "./pages/Wishlist/wishList";
+import { Login } from "./pages/login/login";
+import { Navigation } from "./components/navigation/navigation";
+import { ProductList } from "./pages/Productlistingpage/productList";
+import Mockman from "mockman-js";
+import { Signup } from "./pages/Signup/signup";
+import { RequiresAuth } from "./components/RequiresAuth/RequiresAuth";
+import { UserProfile } from "./pages/userProfilePage/userProfilePage.jsx/userProfile";
+import { ProductDetail } from "./pages/productDetail/productDetail";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="mockBee logo" width="180" height="180" />
-        <h1 className="brand-title">
-          Welcome to <span>mockBee!</span>
-        </h1>
-        <p className="brand-description">
-          Get started by editing <code>src/App.js</code>
-        </p>
-        <div className="links">
-          <a
-            href="https://mockbee.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Explore mockBee
-          </a>
-          <a
-            href="https://mockbee.netlify.app/docs/api/introduction"
-            target="_blank"
-            rel="noreferrer"
-          >
-            API Documentation
-          </a>
-          <a
-            href="https://github.com/neogcamp/mockBee"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Contribute
-          </a>
-        </div>
-      </header>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/cart"
+          element={
+            <RequiresAuth>
+              <Cart />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/wishlist"
+          element={
+            <RequiresAuth>
+              <WishList />
+            </RequiresAuth>
+          }
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/productlist" element={<ProductList />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route
+          path="/productDetail/:productId"
+          element={
+            <RequiresAuth>
+              <ProductDetail />
+            </RequiresAuth>
+          }
+        />
+        <Route path="/mock-api" element={<Mockman />} />
+        <Route
+          path="/user"
+          element={
+            <RequiresAuth>
+              <UserProfile />
+            </RequiresAuth>
+          }
+        />
+      </Routes>
+      <NavLink to="/mock-api">mockman</NavLink>
     </div>
   );
 }
