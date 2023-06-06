@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../../../context/cart/cartContext";
 import { useData } from "../../../context/data/dataContext";
 import { useWish } from "../../../context/wishlist/wishListContext";
+import "./userProfile.css";
 export const UserProfile = () => {
   const {
     loginState: { user },
@@ -14,23 +15,32 @@ export const UserProfile = () => {
   const { wishlistDispatch } = useWish();
   const navigate = useNavigate();
   return (
-    <>
+    <div className="user-page">
       <h1>User Profile</h1>
-      <p>firstName: {user.firstName}</p>
-      <p>lastName: {user.lastName}</p>
-      <p>email: {user.email}</p>
-      <button
-        onClick={() => {
-          localStorage.removeItem("token");
-          navigate("/");
-          loginDispatch({ type: "logout" });
-          dispatch({ type: "resetAll" });
-          cartDispatch({ type: "clearCart" });
-          wishlistDispatch({ type: "clearWishlist" });
-        }}
-      >
-        Logout
-      </button>
-    </>
+      <div className="user-profile">
+        <p className="user-row">
+          <strong>Name</strong>
+          <p>
+            {" "}
+            {user.firstName} {user.lastName}
+          </p>
+        </p>
+        <p className="user-row">
+          <strong>E-mail</strong> <p>{user.email}</p>
+        </p>
+        <button
+          onClick={() => {
+            localStorage.removeItem("token");
+            navigate("/");
+            loginDispatch({ type: "logout" });
+            dispatch({ type: "resetAll" });
+            cartDispatch({ type: "clearCart" });
+            wishlistDispatch({ type: "clearWishlist" });
+          }}
+        >
+          Logout
+        </button>
+      </div>
+    </div>
   );
 };
