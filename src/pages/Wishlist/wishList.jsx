@@ -8,13 +8,16 @@ export const WishList = () => {
   } = useWish();
   return (
     <div className="wishlist-page">
-      <h1>WishList</h1>
-
-      <div className="wishlist-items-container">
-        {wishList.map((element) => {
-          return <Card product={element} />;
-        })}
-      </div>
+      <h2>My WishList ({wishList.length})</h2>
+      {wishList.length === 0 ? (
+        <h3>WishList is empty ☹️</h3>
+      ) : (
+        <div className="wishlist-items-container">
+          {wishList.map((element) => {
+            return <Card product={element} />;
+          })}
+        </div>
+      )}
     </div>
   );
 };

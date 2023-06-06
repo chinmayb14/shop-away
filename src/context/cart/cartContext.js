@@ -1,4 +1,5 @@
 import React, { useContext, createContext, useReducer } from "react";
+import { useData } from "../data/dataContext";
 
 const cartContext = createContext();
 
@@ -18,9 +19,10 @@ export const CartProvider = ({ children }) => {
     cart: [],
     deliveryCharges: 1000,
   });
-
+  const { dispatch } = useData();
   const addToCart = async (product) => {
     try {
+      dispatch({ type: "toggleLoading" });
       const result = await fetch("/api/user/cart", {
         method: "POST",
         headers: {
@@ -34,11 +36,14 @@ export const CartProvider = ({ children }) => {
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      dispatch({ type: "toggleLoading" });
     }
   };
 
   const increaseQuantity = async (id) => {
     try {
+      dispatch({ type: "toggleLoading" });
       const result = await fetch(`/api/user/cart/${id}`, {
         method: "POST",
         body: JSON.stringify({
@@ -56,11 +61,14 @@ export const CartProvider = ({ children }) => {
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      dispatch({ type: "toggleLoading" });
     }
   };
 
   const decreaseQuantity = async (id) => {
     try {
+      dispatch({ type: "toggleLoading" });
       const result = await fetch(`/api/user/cart/${id}`, {
         method: "POST",
         body: JSON.stringify({
@@ -78,24 +86,28 @@ export const CartProvider = ({ children }) => {
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      dispatch({ type: "toggleLoading" });
     }
   };
 
   const deleteItem = async (id) => {
     try {
+      dispatch({ type: "toggleLoading" });
       const result = await fetch(`/api/user/cart/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `${localStorage.getItem("token")}`,
         },
       });
-      console.log(result);
       if (result.status === 200) {
         const { cart } = await result.json();
         cartDispatch({ type: "updateCart", payload: cart });
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      dispatch({ type: "toggleLoading" });
     }
   };
   const itemAlreadyInCart = (item_id) =>

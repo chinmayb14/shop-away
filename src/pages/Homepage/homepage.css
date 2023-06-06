@@ -6,11 +6,11 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
-  position: relative;
   margin-top: 1rem;
   align-self: center;
   align-items: center;
   justify-content: center;
+  border-radius: 0.5rem;
 }
 .hero-img .hero-img-info {
   display: flex;

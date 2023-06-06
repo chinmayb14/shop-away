@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./cart.css";
 import { useCart } from "../../context/cart/cartContext";
 import { useWish } from "../../context/wishlist/wishListContext";
 import { useNavigate } from "react-router-dom";
+import { Loader } from "../../components/loader/loader";
 export const Cart = () => {
   const navigate = useNavigate();
   const {
@@ -16,12 +17,12 @@ export const Cart = () => {
   } = useCart();
 
   const { addToWishList, itemInWishList } = useWish();
-  console.log(cart);
+
   return (
     <div className="cartpage">
-      <h1>Cart</h1>
-      {cart.length === 0 ? (
-        <h1>Cart is Empty</h1>
+      <h2>My Cart ({itemsInCart})</h2>
+      {itemsInCart === 0 ? (
+        <h3>The cart is Empty ☹️</h3>
       ) : (
         <div className="cart-container">
           <div className="itemList">

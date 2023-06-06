@@ -4,6 +4,8 @@ const dataContext = createContext();
 
 const dataReducer = (state, action) => {
   switch (action.type) {
+    case "toggleLoading":
+      return { ...state, loading: !state.loading };
     case "retrieveData":
       return { ...state, data: action.payload };
     case "retrieveCategory":
@@ -56,11 +58,12 @@ export const DataProvider = ({ children }) => {
     ratingFilter: 0,
     sortFilter: null,
     checkbox: [],
-    wishList: [],
     productData: {},
+    loading: false,
   });
   const getData = async () => {
     try {
+      dispatch({ type: "toggleLoading" });
       const resultData = await fetch("/api/products");
       const categoryData = await fetch("/api/categories");
       if (categoryData.status === 200) {
@@ -73,6 +76,8 @@ export const DataProvider = ({ children }) => {
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      dispatch({ type: "toggleLoading" });
     }
   };
   useEffect(() => {
