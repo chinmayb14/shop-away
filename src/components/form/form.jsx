@@ -35,7 +35,7 @@ export const Forme = ({ element, setUpdateForm }) => {
         <label htmlFor="City">City</label>
         <input
           id="City"
-          value={element.city}
+          defaultValue={element.city}
           onChange={(e) =>
             dispatch({ type: "addcity", payload: e.target.value })
           }
