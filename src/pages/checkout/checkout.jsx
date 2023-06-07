@@ -184,7 +184,7 @@ export const Checkout = () => {
                 onClick={() => {
                   navigate("/checkout");
                   toast.success("order placed");
-                  navigate("productlist");
+                  navigate("/productlist");
                 }}
               >
                 Place Order
