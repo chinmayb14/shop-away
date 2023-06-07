@@ -93,7 +93,7 @@ export const Cart = () => {
               <h4>Total Price</h4>
               <h4>₹{totalPrice}</h4>
             </div>
-            <button>Checkout</button>
+            <button onClick={() => navigate("/checkout")}>Checkout</button>
           </div>
         </div>
       )}

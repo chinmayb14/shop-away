@@ -12,9 +12,7 @@ export const Navigation = () => {
   const navigate = useNavigate();
   const { dispatch } = useData();
 
-  const {
-    cartItems: { cart },
-  } = useCart();
+  const { itemsInCart } = useCart();
   const {
     wishlistItems: { wishList },
   } = useWish();
@@ -44,7 +42,7 @@ export const Navigation = () => {
           Login
         </button>
         <div className="badge-position">
-          <span>{cart.length}</span>
+          <span>{itemsInCart}</span>
           <MdiCartOutline onClick={() => navigate("/cart")} />
         </div>
         <div className="badge-position">

@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-
 import { Home } from "./pages/Homepage/home";
 import { Cart } from "./pages/Cartpage/cart";
 import { WishList } from "./pages/Wishlist/wishList";
@@ -15,6 +14,7 @@ import { UserProfile } from "./pages/userProfilePage/userProfilePage.jsx/userPro
 import { ProductDetail } from "./pages/productDetail/productDetail";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Checkout } from "./pages/checkout/checkout";
 function App() {
   return (
     <div className="App">
@@ -57,6 +57,7 @@ function App() {
             </RequiresAuth>
           }
         />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       {/* <NavLink to="/mock-api">mockman</NavLink> */}
       <ToastContainer

@@ -37,6 +37,71 @@ const dataReducer = (state, action) => {
     case "productData": {
       return { ...state, productData: action.payload };
     }
+
+    case "addName":
+      return {
+        ...state,
+        addressadder: { ...state.addressadder, name: action.payload },
+      };
+    case "addsociety":
+      return {
+        ...state,
+        addressadder: { ...state.addressadder, Society: action.payload },
+      };
+    case "addcity":
+      return {
+        ...state,
+        addressadder: { ...state.addressadder, city: action.payload },
+      };
+    case "addstate":
+      return {
+        ...state,
+        addressadder: { ...state.addressadder, state: action.payload },
+      };
+    case "addcountry":
+      return {
+        ...state,
+        addressadder: { ...state.addressadder, country: action.payload },
+      };
+    case "addzip":
+      return {
+        ...state,
+        addressadder: { ...state.addressadder, zipcode: action.payload },
+      };
+    case "addphone":
+      return {
+        ...state,
+        addressadder: { ...state.addressadder, phoneNo: action.payload },
+      };
+    case "addAddress":
+      return {
+        ...state,
+        addresses: [...state.addresses, { ...state.addressadder }],
+      };
+    case "updateAddress":
+      return {
+        ...state,
+        addresses: state.addresses.map((element) =>
+          element.name === state.addressadder.name
+            ? { ...state.addressadder }
+            : element
+        ),
+      };
+    case "resetAddress":
+      return {
+        ...state,
+        addressadder: {
+          name: "",
+          Society: "",
+          city: "",
+          state: "",
+          country: "",
+          zipcode: 0,
+          phoneNo: 0,
+        },
+      };
+    case "selectAddress":
+      return { ...state, selectedAddress: { ...action.payload } };
     case "resetAll":
       return {
         ...state,
@@ -44,6 +109,27 @@ const dataReducer = (state, action) => {
         ratingFilter: 0,
         sortFilter: null,
         checkbox: [],
+        selectedAddress: {},
+        addressadder: {
+          name: "",
+          Society: "",
+          city: "",
+          state: "",
+          country: "",
+          zipcode: 0,
+          phoneNo: 0,
+        },
+        addresses: [
+          {
+            name: "Chinmay Bahuguna",
+            Society: "Tower heights",
+            city: "Vadodara",
+            state: "Gujarat",
+            country: "India",
+            zipcode: 390011,
+            phoneNo: 9825498254,
+          },
+        ],
       };
     default:
       return state;
@@ -60,6 +146,27 @@ export const DataProvider = ({ children }) => {
     checkbox: [],
     productData: {},
     loading: false,
+    addressadder: {
+      name: "",
+      Society: "",
+      city: "",
+      state: "",
+      country: "",
+      zipcode: 0,
+      phoneNo: 0,
+    },
+    addresses: [
+      {
+        name: "Chinmay Bahuguna",
+        Society: "Tower heights",
+        city: "Vadodara",
+        state: "Gujarat",
+        country: "India",
+        zipcode: 390011,
+        phoneNo: 9825498254,
+      },
+    ],
+    selectedAddress: {},
   });
   const getData = async () => {
     try {
