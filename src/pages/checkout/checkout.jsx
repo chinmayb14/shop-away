@@ -5,6 +5,7 @@ import { useCart } from "../../context/cart/cartContext";
 import { useData } from "../../context/data/dataContext";
 import { Form } from "../../components/form/form";
 import { Address } from "../../components/adressses/addresses";
+import { toast } from "react-toastify";
 
 export const Checkout = () => {
   const navigate = useNavigate();
@@ -176,7 +177,15 @@ export const Checkout = () => {
             )}
             <hr></hr>
           </div>
-          <button onClick={() => navigate("/checkout")}>Place Order</button>
+          <button
+            onClick={() => {
+              navigate("/checkout");
+              toast.success("order placed");
+              navigate("productlist");
+            }}
+          >
+            Place Order
+          </button>
         </div>
       </div>
     </div>
