@@ -162,30 +162,35 @@ export const Checkout = () => {
             <h4>Total Price</h4>
             <h4>₹{totalPrice}</h4>
           </div>
-          <div className="headingcheck">
-            <hr></hr>
-            <h4>Deliver To</h4>
-            {selectedAddress.name && (
-              <div className="address-info">
-                <h5>{selectedAddress.name}</h5>
-                <p>
-                  {selectedAddress.Society}, {selectedAddress.city},{" "}
-                  {selectedAddress.state}, {selectedAddress.country},{" "}
-                  {selectedAddress.zipcode}, {selectedAddress.phoneNo}
-                </p>
+          {selectedAddress.name && (
+            <>
+              <div className="headingcheck">
+                <hr></hr>
+                <h4>Deliver To</h4>
+                {selectedAddress.name && (
+                  <div className="address-info">
+                    <h5>{selectedAddress.name}</h5>
+                    <p>
+                      {selectedAddress.Society}, {selectedAddress.city},{" "}
+                      {selectedAddress.state}, {selectedAddress.country},{" "}
+                      {selectedAddress.zipcode}, {selectedAddress.phoneNo}
+                    </p>
+                  </div>
+                )}
+                <hr></hr>
               </div>
-            )}
-            <hr></hr>
-          </div>
-          <button
-            onClick={() => {
-              navigate("/checkout");
-              toast.success("order placed");
-              navigate("productlist");
-            }}
-          >
-            Place Order
-          </button>
+
+              <button
+                onClick={() => {
+                  navigate("/checkout");
+                  toast.success("order placed");
+                  navigate("productlist");
+                }}
+              >
+                Place Order
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
