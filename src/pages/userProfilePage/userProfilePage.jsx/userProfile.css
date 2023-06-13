@@ -21,3 +21,15 @@
   display: flex;
   justify-content: space-between;
 }
+.rem {
+  background-color: #e55934;
+  color: white;
+}
+
+.button {
+  padding: 0.2rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}

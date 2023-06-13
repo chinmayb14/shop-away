@@ -25,3 +25,30 @@
   justify-content: space-around;
   flex-grow: 1;
 }
+
+.button {
+  padding: 0.2rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.card .card-info .primary {
+  background-color: #223843;
+  color: white;
+}
+
+.card .card-info .primarybtn {
+  background-color: #36827f;
+  color: white;
+}
+
+.card .card-info .secondary {
+  background-color: #ece5f0;
+  color: #223843;
+}
+
+.card .card-info .rem {
+  background-color: #e55934;
+  color: white;
+}

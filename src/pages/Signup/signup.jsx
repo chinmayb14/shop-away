@@ -98,7 +98,7 @@ export const Signup = () => {
           </button>
         </div>
         <button
-          id="account"
+          className="primarybtn button"
           onClick={() => SignupUser(signInState, signInUser)}
         >
           Create New Account

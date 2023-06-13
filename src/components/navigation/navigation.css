@@ -1,6 +1,6 @@
 .navigation {
   background-color: #ece5f0;
-  color: #2d3142;
+  color: #223843;
   padding: 1rem;
   display: flex;
   justify-content: space-around;
@@ -9,10 +9,10 @@
   align-self: center;
   padding: 0.5rem;
   font-size: 1rem;
+  cursor: pointer;
   font-family: "Roboto", sans-serif;
 }
 .navigation button {
-  width: fit-content;
   padding: 3px 5px;
   height: 30px;
 }
@@ -54,23 +54,33 @@
 }
 .badge-position svg {
   align-self: center;
+  cursor: pointer;
 }
 .badge-position span {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
-  padding: 1px;
-  font-size: 10px;
+  background-color: #d11124;
+  font-size: 11px;
   color: white;
-  width: 10px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   right: 0px;
-  border-radius: 100%;
+  border-radius: 50%;
   position: absolute;
 }
 .buttonShow {
   display: inline-block;
+  background-color: #223843;
+  color: white;
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.buttonShow:hover {
+  color: #ff674d;
 }
 
 .buttonNoShow {
@@ -79,7 +89,7 @@
 @media (min-width: 1024px) {
   .navigation {
     background-color: #ece5f0;
-    color: #2d3142;
+    color: #223843;
     padding: 1rem;
     display: flex;
     justify-content: space-around;

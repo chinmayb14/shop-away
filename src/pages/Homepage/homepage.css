@@ -32,6 +32,12 @@
 .hero-img .hero-img-info button {
   width: 5rem;
   height: 2rem;
+  background-color: #36827f;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.2rem;
 }
 .category-container {
   display: flex;
@@ -40,7 +46,7 @@
 }
 .category-container h1 {
   align-self: center;
-  margin-bottom: 1rem;
+  margin: 2rem 0rem;
 }
 .category {
   flex-wrap: wrap;

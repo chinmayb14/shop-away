@@ -22,13 +22,19 @@ export const Card = ({ product, noDetail }) => {
         }}
       />
       <div className="card-info">
-        <p>{name}</p>
+        <strong>{name}</strong>
         <p>₹{price}</p>
         <p>{rating}</p>
         {itemAlreadyInCart(_id) ? (
-          <button onClick={() => navigate("/cart")}>Go To Cart</button>
+          <button
+            className="primarybtn button"
+            onClick={() => navigate("/cart")}
+          >
+            Go To Cart
+          </button>
         ) : (
           <button
+            className="primary button"
             onClick={() => {
               if (localStorage.getItem("token")) {
                 addToCart(product);
@@ -43,11 +49,15 @@ export const Card = ({ product, noDetail }) => {
         )}
         {noDetail &&
           (itemInWishList(_id) ? (
-            <button onClick={() => navigate("/wishlist")}>
+            <button
+              className="secondary button"
+              onClick={() => navigate("/wishlist")}
+            >
               Go to Wishlist
             </button>
           ) : (
             <button
+              className="secondary button"
               onClick={() => {
                 if (localStorage.getItem("token")) {
                   addToWishList(product);
@@ -62,6 +72,7 @@ export const Card = ({ product, noDetail }) => {
           ))}
         {!noDetail && (
           <button
+            className="rem button"
             onClick={() => {
               removeFromWishList(_id);
               toast.warn(`${product.name} removed from wishlist!`);

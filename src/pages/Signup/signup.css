@@ -30,10 +30,13 @@
   border-radius: 0.5rem;
 }
 
-.signup-page .signup-div #account {
-  padding: 0.25rem 0.5rem;
+.button {
+  padding: 0.3rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
-
 .signup-createAccount {
   display: flex;
   gap: 0.5rem;
@@ -64,4 +67,8 @@
   padding: 1px;
   font-size: 1rem;
   background-color: white;
+}
+.primarybtn {
+  background-color: #36827f;
+  color: white;
 }

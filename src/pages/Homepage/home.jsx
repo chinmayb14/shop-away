@@ -29,6 +29,7 @@ export const Home = () => {
                 <div
                   className={categoryName}
                   key={_id}
+                  role="button"
                   onClick={() => {
                     dispatch({
                       type: "singleCheckBoxFilter",

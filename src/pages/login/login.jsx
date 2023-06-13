@@ -51,6 +51,7 @@ export const Login = () => {
           </button>
         </div>
         <button
+          className="primary button"
           onClick={() => {
             loginUser(loginState, loginDispatch, ifLoginNavigateToSearch);
           }}
@@ -58,6 +59,7 @@ export const Login = () => {
           Login
         </button>
         <button
+          className="primarybtn button"
           onClick={() => {
             loginDispatch({
               type: "retrieveEmail",

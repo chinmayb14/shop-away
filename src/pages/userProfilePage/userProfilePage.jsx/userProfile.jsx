@@ -29,6 +29,7 @@ export const UserProfile = () => {
           <strong>E-mail</strong> <p>{user.email}</p>
         </p>
         <button
+          className="rem button"
           onClick={() => {
             localStorage.removeItem("token");
             navigate("/");
