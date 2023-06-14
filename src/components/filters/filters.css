@@ -26,6 +26,10 @@
   outline: none;
 }
 
+.filter-header button:hover {
+  color: lightgrey;
+}
+
 .filter-category {
   display: flex;
   flex-direction: column;
