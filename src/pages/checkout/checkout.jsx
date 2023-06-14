@@ -6,6 +6,7 @@ import { useData } from "../../context/data/dataContext";
 import { Form } from "../../components/form/form";
 import { Address } from "../../components/adressses/addresses";
 import { toast } from "react-toastify";
+import { useWish } from "../../context/wishlist/wishListContext";
 
 export const Checkout = () => {
   const navigate = useNavigate();
@@ -14,12 +15,15 @@ export const Checkout = () => {
     cartItems: { cart, deliveryCharges },
     totalPrice,
     onlyPrice,
+    cartDispatch,
   } = useCart();
 
   const {
     state: { addresses, selectedAddress, addressadder },
     dispatch,
   } = useData();
+
+  const { wishlistDispatch } = useWish();
   console.log(addressadder);
   console.log(addresses);
   return (
@@ -190,10 +194,14 @@ export const Checkout = () => {
               </div>
 
               <button
+                className="primary button"
                 onClick={() => {
                   navigate("/checkout");
                   toast.success("order placed");
                   navigate("/productlist");
+                  dispatch({ type: "resetAll" });
+                  cartDispatch({ type: "clearCart" });
+                  wishlistDispatch({ type: "clearWishlist" });
                 }}
               >
                 Place Order
