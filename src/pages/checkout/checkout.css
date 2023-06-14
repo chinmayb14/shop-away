@@ -73,3 +73,20 @@
   display: flex;
   justify-content: space-around;
 }
+
+.button {
+  padding: 0.2rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.rem {
+  background-color: #e55934;
+  color: white;
+}
+
+.primary {
+  background-color: #223843;
+  color: white;
+}

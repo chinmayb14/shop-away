@@ -25,6 +25,7 @@ export const Login = () => {
         <h3>Login</h3>
         <label htmlFor="email">Email-Address</label>
         <input
+          required
           id="email"
           placeholder="test@xyz.com"
           value={loginState.email}
@@ -35,6 +36,7 @@ export const Login = () => {
         <label htmlFor="password">Password</label>
         <div className="password-field">
           <input
+            required
             id="password"
             placeholder="*****"
             value={loginState.password}

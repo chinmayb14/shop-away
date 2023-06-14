@@ -21,7 +21,10 @@ export const Address = ({ element }) => {
           </p>
         </div>
       </div>
-      <button onClick={() => setUpdateForm((prev) => !prev)}>
+      <button
+        className="primary button"
+        onClick={() => setUpdateForm((prev) => !prev)}
+      >
         Update Address
       </button>
       {updateForm && <Forme setUpdateForm={setUpdateForm} element={element} />}

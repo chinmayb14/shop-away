@@ -68,10 +68,7 @@ export const Filters = () => {
                   dispatch({ type: "checkboxFilter", payload: e.target.value })
                 }
               />
-              <label htmlFor={element.categoryName}>
-                {" "}
-                {element.categoryName}{" "}
-              </label>
+              <label htmlFor={element._id}> {element.categoryName} </label>
             </span>
           );
         })}

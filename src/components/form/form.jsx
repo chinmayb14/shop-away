@@ -93,6 +93,7 @@ export const Forme = ({ element, setUpdateForm }) => {
       </div>
       <div className="button-row-Form">
         <button
+          className="primary button"
           onClick={() => {
             dispatch({ type: "updateAddress" });
             setUpdateForm((prev) => !prev);
@@ -100,7 +101,12 @@ export const Forme = ({ element, setUpdateForm }) => {
         >
           Update it
         </button>
-        <button onClick={() => setUpdateForm((prev) => !prev)}>Cancel</button>
+        <button
+          className="rem button"
+          onClick={() => setUpdateForm((prev) => !prev)}
+        >
+          Cancel
+        </button>
       </div>
     </div>
   );

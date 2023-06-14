@@ -53,6 +53,7 @@ export const Cart = () => {
                       </button>
                     </p>
                     <button
+                      className="rem button"
                       onClick={() => {
                         deleteItem(element._id);
                         toast.warn(`${element.name} removed from cart!`);
@@ -61,6 +62,7 @@ export const Cart = () => {
                       Remove From Cart
                     </button>
                     <button
+                      className="primarybtn button"
                       onClick={() => {
                         addToWishList(element);
                         toast.success(`${element.name} added to wishlist!`);
@@ -93,7 +95,12 @@ export const Cart = () => {
               <h4>Total Price</h4>
               <h4>₹{totalPrice}</h4>
             </div>
-            <button onClick={() => navigate("/checkout")}>Checkout</button>
+            <button
+              className="primary button"
+              onClick={() => navigate("/checkout")}
+            >
+              Checkout
+            </button>
           </div>
         </div>
       )}

@@ -17,3 +17,15 @@
   display: flex;
   gap: 0.5rem;
 }
+
+.button {
+  padding: 0.2rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.primary {
+  background-color: #223843;
+  color: white;
+}

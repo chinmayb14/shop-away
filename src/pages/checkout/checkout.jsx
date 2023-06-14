@@ -31,7 +31,10 @@ export const Checkout = () => {
           {addresses.map((element) => {
             return <Address element={element} />;
           })}
-          <button onClick={() => setShowForm((prev) => !prev)}>
+          <button
+            className="primarybtn button"
+            onClick={() => setShowForm((prev) => !prev)}
+          >
             Add new address
           </button>
           {showform && (
@@ -113,6 +116,7 @@ export const Checkout = () => {
               </div>
               <div className="button-row-form">
                 <button
+                  className="primary button"
                   onClick={() => {
                     dispatch({ type: "addAddress" });
                     setShowForm((prev) => !prev);
@@ -120,7 +124,12 @@ export const Checkout = () => {
                 >
                   Add Address
                 </button>
-                <button onClick={() => setShowForm(!showform)}>Cancel</button>
+                <button
+                  className="rem button"
+                  onClick={() => setShowForm(!showform)}
+                >
+                  Cancel
+                </button>
               </div>
             </div>
           )}
